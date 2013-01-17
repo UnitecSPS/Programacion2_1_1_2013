@@ -7,8 +7,11 @@
  *
  * @author Gotcha
  */
+import Test.TestClass;
+
 public class Patito {
     public static void main(String[] args) {
         System.out.println("HOLA MUNDO");
+        TestClass tc = new TestClass(1,"Yo");
     }
 }
