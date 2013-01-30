@@ -17,6 +17,10 @@ public class CuentaAhorro extends CuentaBancaria{
         saldo = 500;
     }
 
+    public void setTasa(double ta){
+        tasa = ta;
+    }
+    
     public double getTasa() {
         return tasa;
     }
