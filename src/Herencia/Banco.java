@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Banco {
     public static void main(String[] args) {
         ArrayList<CuentaBancaria> cuentas = new ArrayList<>();
-        
+
         //UP CASTING
         CuentaBancaria ca = new CuentaAhorro(1,"Carlos",0.3);
         
@@ -21,8 +21,20 @@ public class Banco {
         cuentas.add( new CuentaCheques(2,"Antonio"));
         cuentas.add(new CuentaBancaria(3,"erick"));
         
-        for(CuentaBancaria cb : cuentas)
+        for(CuentaBancaria cb : cuentas){
             cb.patito();
+            
+            //llamemos lo extra
+            if( cb instanceof CuentaBancaria ){
+                
+                System.out.println("Tasa: " + 
+                        ((CuentaAhorro)cb).getTasa()  );
+            }
+            else if( cb instanceof CuentaCheques ){
+                System.out.println("CHEQUES\n-----");
+                ((CuentaCheques)cb).imprimirCheques();
+            }
+        }
         
         //----DOWN CASTING INDIRECTO
         CuentaAhorro cah = (CuentaAhorro)ca;
