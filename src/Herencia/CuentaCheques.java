@@ -5,6 +5,7 @@
 package Herencia;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -16,7 +17,6 @@ public class CuentaCheques extends CuentaBancaria {
     
     public CuentaCheques(int n, String c) {
         super(n, c);
-        cheques.add(new Cheque(1,30,"Al portador",true));
     }
     
     public void imprimirCheques(){
@@ -27,8 +27,25 @@ public class CuentaCheques extends CuentaBancaria {
     }
 
     @Override
+    public boolean retiro(double m) {
+        boolean pagado = super.retiro(m);
+        agregarCheque(pagado, m);
+        return pagado;
+    }
+    
+    @Override
     public void patito() {
         System.out.println("SOY UN PATITO CHEQUECITO");
+    }
+
+    private void agregarCheque(boolean pagado, double m) {
+        Scanner lea = new Scanner(System.in);
+        System.out.println("Numero cheque: ");
+        int nc = lea.nextInt();
+        System.out.println("Dirigido a: ");
+        String c = lea.next();
+        
+        cheques.add( new Cheque(nc, m, c, pagado) );
     }
     
     

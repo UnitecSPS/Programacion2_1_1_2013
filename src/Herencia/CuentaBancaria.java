@@ -50,6 +50,21 @@ public class CuentaBancaria{
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "{" + "numero=" + numero + ", cliente=" + cliente + ", saldo=" + saldo + ", apertura=" + apertura + '}';
+    }
+    
+    public boolean transferencia(double m, CuentaBancaria destino){
+        if( retiro(m) ){
+            destino.deposito(m);
+            return true;
+        }
+        return false;
+    }
+    
+    
     
     public void patito(){
         System.out.println("SOY EL PATO PAPA");

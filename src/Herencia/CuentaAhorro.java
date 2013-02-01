@@ -25,6 +25,17 @@ public class CuentaAhorro extends CuentaBancaria{
         return tasa;
     }
     
+    public void registrarIntereses(){
+        deposito( saldo * tasa );
+    }
+
+    @Override
+    public String toString() {
+        return "CuentaAhorro{" + super.toString() +"tasa=" + tasa + '}';
+    }
+    
+    
+    
     @Override
     public void patito() {
         System.out.println("SOY EL PATO HIJO LLAMADO AHORRO");
