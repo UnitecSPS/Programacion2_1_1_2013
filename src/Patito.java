@@ -7,6 +7,7 @@
  *
  * @author Gotcha
  */
+import Examenes.P1.InternetService;
 import Herencia.*;
 import Test.TestClass;
 
@@ -20,5 +21,7 @@ public class Patito {
         CuentaCheques chs = new CuentaCheques(2, "Carlos");
         
         chs.imprimirCheques();
+        
+        //InternetService.AnchoBanda.
     }
 }

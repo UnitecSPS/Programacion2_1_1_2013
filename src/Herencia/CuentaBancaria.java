@@ -10,11 +10,16 @@ import java.util.Date;
  *
  * @author Gotcha
  */
-public class CuentaBancaria{
+public abstract class CuentaBancaria{
     protected int numero;
     protected String cliente;
     protected double saldo;
     protected Date apertura;
+    public static final int VERSION = 9999;
+    
+    public final int X = 1;
+    public final int Y = 2;
+    public final int Z = 3;
     
     public CuentaBancaria(int n, String c){
         numero = n;
@@ -22,7 +27,7 @@ public class CuentaBancaria{
         saldo = 0;
         apertura = new Date();
     }
-
+   
     public int getNumero() {
         return numero;
     }
@@ -39,7 +44,7 @@ public class CuentaBancaria{
         return apertura;
     }
     
-    public void deposito(double m){
+    public final void deposito(double m){
         saldo += m;
     }
     
@@ -53,6 +58,7 @@ public class CuentaBancaria{
 
     @Override
     public String toString() {
+       // VERSION = 2;
         return "{" + "numero=" + numero + ", cliente=" + cliente + ", saldo=" + saldo + ", apertura=" + apertura + '}';
     }
     
@@ -64,10 +70,24 @@ public class CuentaBancaria{
         return false;
     }
     
-    
-    
     public void patito(){
+        
+        final int c;
+        c = 2;
+        //c = 5;
+        switch(c){
+            case X:
+                System.out.println("sss");
+                break;
+            case Y:
+                System.out.println("ddd");
+                break;
+            case Z:
+                System.out.println("klkl");
+        }
+        
         System.out.println("SOY EL PATO PAPA");
     }
     
 }
+ 

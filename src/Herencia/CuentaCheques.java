@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Gotcha
  */
-public class CuentaCheques extends CuentaBancaria {
+public final class CuentaCheques extends CuentaBancaria {
 
     private ArrayList<Cheque> cheques = new ArrayList<>();
     

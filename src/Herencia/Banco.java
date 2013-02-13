@@ -19,7 +19,7 @@ public class Banco {
         
         cuentas.add( ca );
         cuentas.add( new CuentaCheques(2,"Antonio"));
-        cuentas.add(new CuentaBancaria(3,"erick"));
+//        cuentas.add(new CuentaBancaria(3,"erick"));
         
         for(CuentaBancaria cb : cuentas){
             cb.patito();

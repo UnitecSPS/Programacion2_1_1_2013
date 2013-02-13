@@ -8,7 +8,7 @@ package Pruebas;
  *
  * @author Gotcha
  */
-public class Animal {
+public abstract class Animal {
     protected boolean esMamifero;
     protected int cantidad;
     
@@ -17,7 +17,5 @@ public class Animal {
         cantidad = c;
     }
     
-    public void comohabla(){
-        System.out.println("YO ANIMAL HABLO");
-    }
+    public abstract void comohabla();
 }

@@ -18,7 +18,7 @@ public class Perro extends Animal {
     
     @Override
     public void comohabla(){
-        super.comohabla();
+        //super.comohabla();
         System.out.println("GUAU GUAU GUAU");
     }
     

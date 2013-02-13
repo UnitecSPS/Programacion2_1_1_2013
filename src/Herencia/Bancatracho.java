@@ -4,12 +4,16 @@
  */
 package Herencia;
 
+import java.util.Date;
+
 /**
  *
  * @author Gotcha
  */
 public class Bancatracho {
+    
     public static void main(String[] args) {
+
         /*
          * 1- Agregar Cuenta
          * 2- Depositar a una cuenta

@@ -33,9 +33,7 @@ public class CuentaAhorro extends CuentaBancaria{
     public String toString() {
         return "CuentaAhorro{" + super.toString() +"tasa=" + tasa + '}';
     }
-    
-    
-    
+        
     @Override
     public void patito() {
         System.out.println("SOY EL PATO HIJO LLAMADO AHORRO");
