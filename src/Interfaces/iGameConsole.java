@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import java.io.IOException;
+
 /**
  *
  * @author Gotcha

@@ -4,10 +4,12 @@
  */
 package TG2;
 
+import java.util.Date;
+
 public class Twitter extends SocialClass{
 
-    public Twitter(String username){
-        super(username);
+    public Twitter(String username, Date fecha){
+        super(username, fecha);
     }
     
     @Override

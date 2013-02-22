@@ -5,6 +5,7 @@
 package TG2;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -15,13 +16,14 @@ public class TweetDeck implements MantenimientoSocial {
     private ArrayList<SocialClass> redes = new ArrayList<>();
     
     @Override
-    public boolean agregarCuenta(String username, String tipo) {
+    public boolean agregarCuenta(String username, String tipo, Date fecha) {
         if( !buscar(username) ){
             if( tipo.toUpperCase().equals("FACEBOOK")){
-                redes.add(new Facebook(username));
+                redes.add(new Facebook(username, fecha));
+   
             }
             else if(tipo.toUpperCase().equals("TWITTER")){
-                redes.add(new Twitter(username));
+                redes.add(new Twitter(username, fecha));
             }
             return true;
         }
@@ -75,6 +77,32 @@ public class TweetDeck implements MantenimientoSocial {
     @Override
     public boolean agregarPost(String user, String post) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Object[][] getTablaUsuario() {
+        Object tabla[][] = new Object[redes.size()][4];
+        
+        for(int sc = 0; sc < redes.size(); sc++){
+            SocialClass user = redes.get(sc);
+            
+            //username
+            tabla[sc][0] = user.username;
+            //fecha
+            tabla[sc][1] = user.nacimiento;
+            //edad
+            tabla[sc][2] = user.getEdad();
+            //mayor
+            tabla[sc][3] = user.esMayorEdad();
+        }
+        
+        return tabla;
+    }
+
+    @Override
+    public String[] getUserCampos() {
+        String columnas[] = { "Usuario", "Nacimiento", "Edad","Mayor" };
+        return columnas;
     }
     
 }

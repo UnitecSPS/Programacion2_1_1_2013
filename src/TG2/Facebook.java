@@ -5,12 +5,13 @@
 package TG2;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Facebook extends SocialClass implements iComment{
     private ArrayList<Comment> comments;
     
-    public Facebook(String username){
-        super(username);
+    public Facebook(String username, Date fecha){
+        super(username, fecha);
         comments = new ArrayList<>();
     }
     

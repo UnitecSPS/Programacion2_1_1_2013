@@ -5,16 +5,47 @@
 package TG2;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public abstract class SocialClass {
     protected ArrayList<String> friends;
     protected ArrayList<String> posts;
     protected String username;
+    protected Date nacimiento;
     
-    public SocialClass(String username){
+    public SocialClass(String username, Date fecha){
         this.username = username;
         friends = new ArrayList<>();
         posts = new ArrayList<>();
+        nacimiento = fecha;
+    }
+
+    public Date getNacimiento() {
+        return nacimiento;
+    }
+
+    public void setNacimiento(Date nacimiento) {
+        this.nacimiento = nacimiento;
+    }
+    
+    public boolean esMayorEdad(){
+        return getEdad() >= 18;
+    }
+    
+    public int getEdad(){
+        Calendar now = Calendar.getInstance();
+        int ahorita = now.get(Calendar.YEAR);
+        
+        if( nacimiento != null ){
+            Calendar nac = Calendar.getInstance();
+            nac.setTime(nacimiento);
+            
+            int naci = nac.get(Calendar.YEAR);
+            
+            return ahorita - naci;
+        }
+        return 0;
     }
     
     public final void addFriend(String user){

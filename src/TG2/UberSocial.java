@@ -5,6 +5,7 @@
 package TG2;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 
@@ -62,10 +63,10 @@ public class UberSocial {
         
         if( sc == null){//quiere decir que no se encontro
             if( tipo.toUpperCase().equals("FACEBOOK")){
-                redes.add(new Facebook(user));
+                redes.add(new Facebook(user, new Date()));
             }
             else if(tipo.toUpperCase().equals("TWITTER")){
-                redes.add(new Twitter(user));
+                redes.add(new Twitter(user,new Date()));
             }
         }
         else
